@@ -84,15 +84,6 @@
 					<target>20</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version> <!-- Use the version that supports Java 20 -->
-				<configuration>
-					<release>20</release> <!-- Set the release flag here -->
-				</configuration>
-			</plugin>
-
-
 		</plugins>
 	</build>
 
