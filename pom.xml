@@ -14,7 +14,7 @@
 	<name>LazyInLifeGG</name>
 	<description>Backend for LazyInLifegg</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>20</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -77,9 +77,12 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>3.0.7</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<release>17</release> <!-- or the Java version you're targeting -->
+				</configuration>
 			</plugin>
 
 
