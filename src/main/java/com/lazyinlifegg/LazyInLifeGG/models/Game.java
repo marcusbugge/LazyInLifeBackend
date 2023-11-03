@@ -1,26 +1,23 @@
 package com.lazyinlifegg.LazyInLifeGG.models;
 
+import com.lazyinlifegg.LazyInLifeGG.models.Player;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "games")
-@Getter
-@Setter
-@NoArgsConstructor
+@Entity
+@Data
 public class Game {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
+    private String backgroundUrl;
+    private Boolean active;
 
-    private String picture;
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Player> players = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "games")
-    private List<Player> players;
 }
